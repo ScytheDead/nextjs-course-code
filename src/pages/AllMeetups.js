@@ -8,9 +8,7 @@ function AllMeetupsPage() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(
-      'https://react-getting-started-48dec-default-rtdb.firebaseio.com/meetups.json'
-    )
+    fetch('https://react-getting-started-9a8cb-default-rtdb.europe-west1.firebasedatabase.app/meetups.json')
       .then((response) => {
         return response.json();
       })
@@ -20,7 +18,7 @@ function AllMeetupsPage() {
         for (const key in data) {
           const meetup = {
             id: key,
-            ...data[key]
+            ...data[key],
           };
 
           meetups.push(meetup);
